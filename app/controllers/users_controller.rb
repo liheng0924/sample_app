@@ -17,6 +17,7 @@ class UsersController < ApplicationController
    #@user=User.find_by_name("henry")       'success
    #@user=User.find_by_id(params[:id])     'users/1
    #@user=User.find_by_name(params[:id])   'users/henry
+   @microposts=@user.microposts.paginate(page: params[:page])
    end
  
   def create
